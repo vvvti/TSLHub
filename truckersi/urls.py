@@ -4,7 +4,9 @@ from django.conf import settings
 
 
 urlpatterns = [
+    path('', include('react.urls')),
     path('admin/', admin.site.urls),
+    path('', include('main.urls')),
 ]
 
 if settings.DEBUG:
