@@ -5,7 +5,8 @@ import { getProfiles } from "../../actions/profiles";
 
 export class Profiles extends Component {
   static propTypes = {
-    profiles: PropTypes.array.isRequired
+    profiles: PropTypes.array.isRequired,
+    getProfiles: PropTypes.func.isRequired
   };
   componentDidMount() {
     this.props.getProfiles();
