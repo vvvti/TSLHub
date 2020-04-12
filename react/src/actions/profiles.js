@@ -1,4 +1,5 @@
 import axios from "axios";
+import { createMessage, returnErrors } from "./messages";
 
 import { GET_PROFILES } from "./types";
 
@@ -12,5 +13,7 @@ export const getProfiles = () => dispatch => {
         payload: res.data
       });
     })
-    .catch(err => console.log(err));
+    .catch(err =>
+      dispatch(returnErrors(err.response.data, err.response.status))
+    );
 };

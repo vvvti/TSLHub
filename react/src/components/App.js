@@ -14,7 +14,7 @@ import Alerts from "./layout/Alerts";
 //Alert options
 const alertOptions = {
   timeout: 3000,
-  position: "top right"
+  position: "top center"
 };
 
 class App extends Component {

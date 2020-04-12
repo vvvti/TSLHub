@@ -20,8 +20,6 @@ export class Alerts extends Component {
     }
 
     if (message !== prevProps.message) {
-      if (message.deleteInvoice) alert.success(message.deleteInvoice);
-      if (message.addInvoice) alert.success(message.addInvoice);
       if (message.passwordsNotMatch) alert.error(message.passwordsNotMatch);
     }
     if (error.msg.non_field_errors)
