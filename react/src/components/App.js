@@ -1,5 +1,11 @@
 import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
+import {
+  HashRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom";
 
 import "./App.css";
 
@@ -9,6 +15,10 @@ import AlertTemplate from "react-alert-template-basic";
 import { Provider } from "react-redux";
 import store from "../store";
 import Profiles from "./profiles/Profiles";
+import Register from "./accounts/Register";
+import Login from "./accounts/Login";
+import PrivateRoute from "./common/PrivateRoute";
+
 import Alerts from "./layout/Alerts";
 
 //Alert options
@@ -22,14 +32,18 @@ class App extends Component {
     return (
       <Provider store={store}>
         <AlertProvider template={AlertTemplate} {...alertOptions}>
-          <Fragment>
-            <div className="Container">
-              <h1>TRUCKERSI APP!</h1>
-
+          <Router>
+            <Fragment>
               <Alerts />
-              <Profiles />
-            </div>
-          </Fragment>
+              <div className="Container">
+                <Switch>
+                  <PrivateRoute exact path="/" component={Profiles} />
+                  <Route exact path="/register" component={Register} />
+                  <Route exact path="/login" component={Login} />
+                </Switch>
+              </div>
+            </Fragment>
+          </Router>
         </AlertProvider>
       </Provider>
     );

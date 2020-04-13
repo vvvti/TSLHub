@@ -15,6 +15,7 @@ export class Profiles extends Component {
   render() {
     return (
       <Fragment>
+        <h1>TRUCKERSI APP!</h1>
         <h2>Profile</h2>
         <table>
           <thead>
