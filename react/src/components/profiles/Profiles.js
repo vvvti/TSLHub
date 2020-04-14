@@ -2,6 +2,8 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getProfiles } from "../../actions/profiles";
+import Header from "../layout/Header";
+import "./Profiles.css";
 
 export class Profiles extends Component {
   static propTypes = {
@@ -15,6 +17,9 @@ export class Profiles extends Component {
   render() {
     return (
       <Fragment>
+        <div className="header-container">
+          <Header />
+        </div>
         <h1>TRUCKERSI APP!</h1>
         <h2>Profile</h2>
         <table>

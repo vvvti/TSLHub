@@ -61,6 +61,7 @@ export class Register extends Component {
             placeholder="Nazwa użytkownika"
             onChange={this.onChange}
             value={username}
+            name="username"
           />
           <input
             className="form-registration-input"
@@ -68,6 +69,7 @@ export class Register extends Component {
             placeholder="Adres email"
             onChange={this.onChange}
             value={email}
+            name="email"
           />
           <input
             className="form-registration-input"
@@ -75,6 +77,7 @@ export class Register extends Component {
             placeholder="Hasło"
             onChange={this.onChange}
             value={password}
+            name="password"
           />
           <input
             className="form-registration-input"
@@ -82,6 +85,7 @@ export class Register extends Component {
             placeholder="Powtórz hasło"
             onChange={this.onChange}
             value={password2}
+            name="password2"
           />
           <input
             className="form-registration-submit-button"

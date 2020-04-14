@@ -18,6 +18,7 @@ import Profiles from "./profiles/Profiles";
 import Register from "./accounts/Register";
 import Login from "./accounts/Login";
 import PrivateRoute from "./common/PrivateRoute";
+import { loadUser } from "../actions/auth";
 
 import Alerts from "./layout/Alerts";
 
@@ -28,6 +29,9 @@ const alertOptions = {
 };
 
 class App extends Component {
+  componentDidMount() {
+    store.dispatch(loadUser());
+  }
   render() {
     return (
       <Provider store={store}>

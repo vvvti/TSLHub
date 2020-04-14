@@ -47,6 +47,7 @@ export class Login extends Component {
             placeholder="Nazwa użytkownika"
             onChange={this.onChange}
             value={username}
+            name="username"
           />
 
           <input
@@ -55,6 +56,7 @@ export class Login extends Component {
             placeholder="Hasło"
             onChange={this.onChange}
             value={password}
+            name="password"
           />
 
           <input
