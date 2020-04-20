@@ -1,8 +1,13 @@
 .header-container {
   display: block;
-
+  z-index: 150;
   width: 100%;
 }
 .Container {
   margin: 0 0;
+}
+
+main {
+  margin-left: 5rem;
+  padding: 1rem;
 }

@@ -1,0 +1,9 @@
+.login-container {
+  color: gray;
+  display: flex;
+  align-items: center;
+}
+
+.login-container button {
+  margin-left: 1rem;
+}

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getProfiles } from "../../actions/profiles";
 import Header from "../layout/Header";
+import Navbar from "../layout/navbar/Navbar";
 import "./Profiles.css";
 
 export class Profiles extends Component {
@@ -17,31 +18,35 @@ export class Profiles extends Component {
   render() {
     return (
       <Fragment>
+        <Navbar />
         <div className="header-container">
           <Header />
         </div>
-        <h1>TRUCKERSI APP!</h1>
-        <h2>Profile</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Telephone number</th>
-              <th>First name</th>
-              <th>Last Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.props.profiles.map(profile => (
-              <tr key={profile.id}>
-                <td>{profile.id}</td>
-                <td>{profile.telephone_number}</td>
-                <td>{profile.first_name}</td>
-                <td>{profile.last_name}</td>
+
+        <main>
+          <h1>TRUCKERSI APP!</h1>
+          <h2>Profile</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Telephone number</th>
+                <th>First name</th>
+                <th>Last Name</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {this.props.profiles.map(profile => (
+                <tr key={profile.id}>
+                  <td>{profile.id}</td>
+                  <td>{profile.telephone_number}</td>
+                  <td>{profile.first_name}</td>
+                  <td>{profile.last_name}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </main>
       </Fragment>
     );
   }
