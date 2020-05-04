@@ -16,7 +16,7 @@ export class Navbar extends Component {
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
-                className="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x"
+                className="svg-inline--fa fa-angle-double-right fa-w-14"
               >
                 <g className="fa-group">
                   <path
@@ -35,13 +35,13 @@ export class Navbar extends Component {
           </li>
 
           <li className="sidenav-item">
-            <a href="#" className="sidenav-link">
+            <a href="/" className="sidenav-link">
               <svg
                 aria-hidden="true"
                 focusable="false"
                 data-prefix="fas"
                 data-icon="home"
-                class="svg-inline--fa fa-home fa-w-18"
+                className="svg-inline--fa fa-home fa-w-18"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 576 512"
@@ -64,7 +64,7 @@ export class Navbar extends Component {
                 focusable="false"
                 data-prefix="fas"
                 data-icon="truck-moving"
-                class="svg-inline--fa fa-truck-moving fa-w-20"
+                className="svg-inline--fa fa-truck-moving fa-w-20"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 640 512"
@@ -86,7 +86,7 @@ export class Navbar extends Component {
                 focusable="false"
                 data-prefix="fas"
                 data-icon="file-signature"
-                class="svg-inline--fa fa-file-signature fa-w-18"
+                className="svg-inline--fa fa-file-signature fa-w-18"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 576 512"
@@ -107,7 +107,7 @@ export class Navbar extends Component {
                 focusable="false"
                 data-prefix="fas"
                 data-icon="calendar-check"
-                class="svg-inline--fa fa-calendar-check fa-w-14"
+                className="svg-inline--fa fa-calendar-check fa-w-14"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
@@ -128,7 +128,7 @@ export class Navbar extends Component {
                 focusable="false"
                 data-prefix="far"
                 data-icon="file-alt"
-                class="svg-inline--fa fa-file-alt fa-w-12"
+                className="svg-inline--fa fa-file-alt fa-w-12"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 384 512"
@@ -151,7 +151,7 @@ export class Navbar extends Component {
                 focusable="false"
                 data-prefix="fas"
                 data-icon="users"
-                class="svg-inline--fa fa-users fa-w-20"
+                className="svg-inline--fa fa-users fa-w-20"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 640 512"
