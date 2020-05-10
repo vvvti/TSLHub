@@ -75,7 +75,7 @@ export class Navbar extends Component {
                   className="fa-secondary"
                 ></path>
               </svg>
-              <span className="link-text">Vehicules</span>
+              <span className="link-text">Pojazdy</span>
             </a>
           </li>
 
@@ -97,7 +97,7 @@ export class Navbar extends Component {
                   className="fa-secondary"
                 ></path>
               </svg>
-              <span className="link-text">Insurances</span>
+              <span className="link-text">Ubezpieczenia</span>
             </a>
           </li>
           <li className="sidenav-item">
@@ -118,7 +118,7 @@ export class Navbar extends Component {
                   className="fa-secondary"
                 ></path>
               </svg>
-              <span className="link-text">Schedule</span>
+              <span className="link-text">Grafik</span>
             </a>
           </li>
           <li className="sidenav-item">
@@ -140,7 +140,7 @@ export class Navbar extends Component {
                 ></path>
               </svg>
 
-              <span className="link-text">Documents</span>
+              <span className="link-text">Dokumenty</span>
             </a>
           </li>
 
@@ -162,7 +162,7 @@ export class Navbar extends Component {
                   className="fa-secondary"
                 ></path>
               </svg>
-              <span className="link-text">Accounts</span>
+              <span className="link-text">Profile</span>
             </a>
           </li>
 

@@ -1,11 +1,8 @@
 from django.contrib import admin
-from vehicules.models import Car
+from vehicules.models import Vehicule, RegistrationCertificate, VehiculeCard, TechnicalInspection
 
 
-class CarAdmin(admin.ModelAdmin):
-    list_display = ("pk", "reg_number", "car_typ", "car_brand", "car_model")
-    list_display_links = ("reg_number",)
-    search_fields = ("reg_number", "car_model")
-
-
-admin.site.register(Car, CarAdmin)
+admin.site.register(Vehicule)
+admin.site.register(RegistrationCertificate)
+admin.site.register(VehiculeCard)
+admin.site.register(TechnicalInspection)
