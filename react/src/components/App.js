@@ -14,9 +14,14 @@ import AlertTemplate from "react-alert-template-basic";
 
 import { Provider } from "react-redux";
 import store from "../store";
+
 import Profiles from "./profiles/Profiles";
 import Register from "./accounts/Register";
 import Login from "./accounts/Login";
+import Dashboard from "./layout/dashboard/Dashboard";
+import Header from "../components/layout/Header";
+import Navbar from "../components/layout/navbar/Navbar";
+
 import PrivateRoute from "./common/PrivateRoute";
 import { loadUser } from "../actions/auth";
 
@@ -39,11 +44,18 @@ class App extends Component {
           <Router>
             <Fragment>
               <Alerts />
-              <Switch>
-                <PrivateRoute exact path="/" component={Profiles} />
-                <Route exact path="/register" component={Register} />
-                <Route exact path="/login" component={Login} />
-              </Switch>
+              <Navbar />
+              <div className="header-container">
+                <Header />
+              </div>
+              <main>
+                <Switch>
+                  <PrivateRoute exact path="/" component={Dashboard} />
+                  <PrivateRoute exact path="/profile" component={Profiles} />
+                  <Route exact path="/register" component={Register} />
+                  <Route exact path="/login" component={Login} />
+                </Switch>
+              </main>
             </Fragment>
           </Router>
         </AlertProvider>

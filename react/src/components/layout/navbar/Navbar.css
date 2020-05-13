@@ -29,6 +29,7 @@
   height: 5rem;
   color: var(--text-primary);
   text-decoration: none;
+  outline-color: var(--bg-primary);
 }
 .link-text {
   display: none;
@@ -46,4 +47,8 @@
 
 .sidenav:hover .link-text {
   display: block;
+}
+
+.sidenav-link:hover {
+  text-decoration: none;
 }

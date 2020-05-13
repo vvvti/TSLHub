@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./Navbar.css";
 
+import { Link, Redirect } from "react-router-dom";
+
 export class Navbar extends Component {
   render() {
     return (
@@ -31,11 +33,12 @@ export class Navbar extends Component {
                   ></path>
                 </g>
               </svg>
+              <span className="link-text"></span>
             </a>
           </li>
 
           <li className="sidenav-item">
-            <a href="/" className="sidenav-link">
+            <Link to="/" className="sidenav-link">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -54,7 +57,7 @@ export class Navbar extends Component {
               </svg>
 
               <span className="link-text">Home</span>
-            </a>
+            </Link>
           </li>
 
           <li className="sidenav-item">
@@ -145,7 +148,7 @@ export class Navbar extends Component {
           </li>
 
           <li className="sidenav-item">
-            <a href="#" className="sidenav-link">
+            <Link to="/profile" className="sidenav-link">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -162,8 +165,9 @@ export class Navbar extends Component {
                   className="fa-secondary"
                 ></path>
               </svg>
-              <span className="link-text">Profile</span>
-            </a>
+
+              <span className="link-text">Profil</span>
+            </Link>
           </li>
 
           <li className="sidenav-item" id="themeButton">

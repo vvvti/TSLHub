@@ -13,7 +13,6 @@ export class Header extends Component {
   };
   render() {
     const { isAuthenticated, user } = this.props.auth;
-    
 
     const authLinks = (
       <div className="login-container">
@@ -32,15 +31,15 @@ export class Header extends Component {
     );
 
     const guestLinks = (
-      <div>
+      <div className="auth-links">
         <li className="nav-item">
-          <Link to="/register" className="nav-link">
-            Register
+          <Link to="/register" className="link">
+            Rejestracja
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/login" className="nav-link">
-            Login
+          <Link to="/login" className="link">
+            Logowanie
           </Link>
         </li>
       </div>
