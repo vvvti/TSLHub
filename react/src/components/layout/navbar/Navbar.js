@@ -61,7 +61,7 @@ export class Navbar extends Component {
           </li>
 
           <li className="sidenav-item">
-            <a href="#" className="sidenav-link">
+          <Link to="/vehicules" className="sidenav-link">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -79,7 +79,7 @@ export class Navbar extends Component {
                 ></path>
               </svg>
               <span className="link-text">Pojazdy</span>
-            </a>
+            </Link>
           </li>
 
           <li className="sidenav-item">

@@ -15,13 +15,14 @@ import AlertTemplate from "react-alert-template-basic";
 import { Provider } from "react-redux";
 import store from "../store";
 
+import Vehicules from "./vehicules/Vehicules";
+import AddVehicule from "./addvehicule/AddVehicule";
 import Profiles from "./profiles/Profiles";
 import Register from "./accounts/Register";
 import Login from "./accounts/Login";
 import Dashboard from "./layout/dashboard/Dashboard";
 import Header from "../components/layout/Header";
 import Navbar from "../components/layout/navbar/Navbar";
-import Vehicules from "../components/layout/vehicules/Vehicules";
 
 import PrivateRoute from "./common/PrivateRoute";
 import { loadUser } from "../actions/auth";
@@ -52,6 +53,12 @@ class App extends Component {
               <main>
                 <Switch>
                   <PrivateRoute exact path="/" component={Dashboard} />
+                  <PrivateRoute exact path="/vehicules" component={Vehicules} />
+                  <PrivateRoute
+                    exact
+                    path="/addvehicule"
+                    component={AddVehicule}
+                  />
                   <PrivateRoute exact path="/profile" component={Profiles} />
                   <PrivateRoute exact path="/vehicules" component={Vehicules} />
 
