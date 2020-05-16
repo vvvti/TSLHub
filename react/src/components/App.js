@@ -15,8 +15,8 @@ import AlertTemplate from "react-alert-template-basic";
 import { Provider } from "react-redux";
 import store from "../store";
 
-import Vehicules from "./vehicules/Vehicules";
-import AddVehicule from "./addvehicule/AddVehicule";
+import Vehicules from "./layout/vehicules/Vehicules";
+import AddVehicule from "./layout/vehicules/AddVehicule";
 import Profiles from "./profiles/Profiles";
 import Register from "./accounts/Register";
 import Login from "./accounts/Login";
@@ -60,7 +60,6 @@ class App extends Component {
                     component={AddVehicule}
                   />
                   <PrivateRoute exact path="/profile" component={Profiles} />
-                  <PrivateRoute exact path="/vehicules" component={Vehicules} />
 
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />
