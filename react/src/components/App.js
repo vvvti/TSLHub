@@ -23,6 +23,11 @@ import Login from "./accounts/Login";
 import Dashboard from "./layout/dashboard/Dashboard";
 import Header from "../components/layout/Header";
 import Navbar from "../components/layout/navbar/Navbar";
+import Insurances from "../components/layout/insurances/Insurances";
+import Schedule from "../components/layout/schedule/Schedule";
+import Documents from "../components/layout/documents/Documents";
+import AdminPanel from "../components/layout/adminpanel/AdminPanel";
+import Drivers from "../components/layout/drivers/Drivers";
 
 import PrivateRoute from "./common/PrivateRoute";
 import { loadUser } from "../actions/auth";
@@ -60,6 +65,19 @@ class App extends Component {
                     component={AddVehicule}
                   />
                   <PrivateRoute exact path="/profile" component={Profiles} />
+                  <PrivateRoute
+                    exact
+                    path="/insurances"
+                    component={Insurances}
+                  />
+                  <PrivateRoute exact path="/schedule" component={Schedule} />
+                  <PrivateRoute exact path="/documents" component={Documents} />
+                  <PrivateRoute
+                    exact
+                    path="/adminpanel"
+                    component={AdminPanel}
+                  />
+                  <PrivateRoute exact path="/drivers" component={Drivers} />
 
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />

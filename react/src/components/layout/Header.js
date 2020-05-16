@@ -17,7 +17,7 @@ export class Header extends Component {
     const authLinks = (
       <div className="login-container">
         <span>
-          <strong>{user ? `Welcome: ${user.username}` : ""}</strong>
+          <strong>{user ? `Witaj: ${user.username}` : ""}</strong>
         </span>
         <li className="nav-item">
           <button
