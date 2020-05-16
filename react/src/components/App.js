@@ -21,6 +21,7 @@ import Login from "./accounts/Login";
 import Dashboard from "./layout/dashboard/Dashboard";
 import Header from "../components/layout/Header";
 import Navbar from "../components/layout/navbar/Navbar";
+import Vehicules from "../components/layout/vehicules/Vehicules";
 
 import PrivateRoute from "./common/PrivateRoute";
 import { loadUser } from "../actions/auth";
@@ -52,6 +53,8 @@ class App extends Component {
                 <Switch>
                   <PrivateRoute exact path="/" component={Dashboard} />
                   <PrivateRoute exact path="/profile" component={Profiles} />
+                  <PrivateRoute exact path="/vehicules" component={Vehicules} />
+
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />
                 </Switch>
