@@ -2,8 +2,6 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getProfiles } from "../../actions/profiles";
-import Header from "../layout/Header";
-import Navbar from "../layout/navbar/Navbar";
 import "./Profiles.css";
 
 export class Profiles extends Component {
