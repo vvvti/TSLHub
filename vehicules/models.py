@@ -1,69 +1,72 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Vehicule(models.Model):
+
     owner = models.ForeignKey("main.CompanyProfile", on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE)
     registration_number = models.CharField(
-        verbose_name="Number rejestracyjny", max_length=8)
-    vehicule_brand = models.CharField(
-        verbose_name="Marka pojazdu", max_length=150)
-    vehicule_type = models.CharField(
-        verbose_name="Typ pojazdu", max_length=30, blank=True)
+        "Number rejestracyjny", max_length=8)
+    vehicule_brand = models.CharField("Marka pojazdu", max_length=150)
+    vehicule_type = models.CharField("Typ pojazdu", max_length=30, blank=True)
     vehicule_model = models.CharField(
-        verbose_name="Model pojazdu", max_length=30, blank=True)
-    vin_number = models.CharField(
-        verbose_name="Numer nadwozia", max_length=17, unique=True)
+        "Model pojazdu", max_length=30, blank=True)
+    vin_number = models.CharField("Numer nadwozia", max_length=17, unique=True)
     first_registration_date = models.DateField(
-        verbose_name="Data pierwszej rejestracji")
+        "Data pierwszej rejestracji")
     registration_owner_name = models.CharField(
-        verbose_name="Nazwa właściciela dowodu rejestracyjnego", max_length=250)
+        "Nazwa właściciela dowodu rejestracyjnego", max_length=250)
     reg_owner_pesel_regon = models.IntegerField(
-        verbose_name="Pesel, Regon właściciela dowodu rejestracyjnego")
+        "Pesel, Regon właściciela dowodu rejestracyjnego")
     reg_owner_address = models.CharField(
-        verbose_name="Adres właściciela dowodu rejestracyjnego", max_length=250)
+        "Adres właściciela dowodu rejestracyjnego", max_length=250)
     owner_name = models.CharField(
-        verbose_name="Nazwa właściciela", max_length=250)
+        "Nazwa właściciela", max_length=250)
     owner_pesel_regon = models.IntegerField(
-        verbose_name="Pesel, Regon właściciela pojazdu")
+        "Pesel, Regon właściciela pojazdu")
     owner_address = models.CharField(
-        verbose_name="Adres właściciela pojazdu", max_length=250)
+        "Adres właściciela pojazdu", max_length=250)
     max_total_weight = models.IntegerField(
-        verbose_name="Maksymalna masa całkowita pojazdu", blank=True)
+        "Maksymalna masa całkowita pojazdu", blank=True, null=True)
     perm_gross_weight = models.IntegerField(
-        verbose_name="Dopuszczalna masa całkowita pojazdu", blank=True)
+        "Dopuszczalna masa całkowita pojazdu", blank=True, null=True)
     perm_gross_group = models.IntegerField(
-        verbose_name="Dopuszczalna masa całkowita zespołu pojazdów", blank=True)
-    gross_weight = models.IntegerField(verbose_name="Masa własna pojazdu")
+        "Dopuszczalna masa całkowita zespołu pojazdów", blank=True, null=True)
+    gross_weight = models.IntegerField("Masa własna pojazdu")
     vehicule_category = models.CharField(
-        verbose_name="Kategoria pojazdu", max_length=150, blank=True)
+        "Kategoria pojazdu", max_length=150, blank=True)
     homologation_number = models.CharField(
-        verbose_name="Numer homologacji", max_length=45, blank=True)
-    axle_count = models.IntegerField(verbose_name="Liczba osi")
+        "Numer homologacji", max_length=45, blank=True)
+    axle_count = models.IntegerField("Liczba osi")
     trailer_total_break = models.IntegerField(
-        verbose_name="Maksymalna masa całkowita przyczepy z hamulcem", blank=True)
+        "Maksymalna masa całkowita przyczepy z hamulcem", blank=True, null=True)
     trailer_total = models.IntegerField(
-        verbose_name="Maksymalna masa całkowita przyczepy bez hamulca", blank=True)
+        "Maksymalna masa całkowita przyczepy bez hamulca", blank=True, null=True)
     engine_capacity = models.FloatField(
-        verbose_name="Pojemność silnika", blank=True)
-    engine_power = models.FloatField(verbose_name="Moc silnika", blank=True)
+        "Pojemność silnika", blank=True, null=True)
+    engine_power = models.FloatField(
+        "Moc silnika", blank=True, null=True)
     fuel_kind = models.CharField(
-        verbose_name="Rodzaj paliwa", max_length=30, blank=True)
+        "Rodzaj paliwa", max_length=30, blank=True)
     power_to_weight = models.FloatField(
-        verbose_name="Stosunek mocy do masy własnej", blank=True)
+        "Stosunek mocy do masy własnej", blank=True, null=True)
     seat_count = models.IntegerField(
-        verbose_name="Liczba miejsc siedzących", blank=True)
+        "Liczba miejsc siedzących", blank=True, null=True)
     places_count = models.IntegerField(
-        verbose_name="Liczba miejsc stojących", blank=True)
+        "Liczba miejsc stojących", blank=True, null=True)
     vehicule_kind = models.CharField(
-        verbose_name="Rodzaj pojazdu", max_length=45)
+        "Rodzaj pojazdu", max_length=45)
     vehicule_purpose = models.CharField(
-        verbose_name="Przeznaczenie pojazdu", max_length=45, blank=True)
-    production_year = models.DateField(verbose_name="Rok produkcji")
+        "Przeznaczenie pojazdu", max_length=45, blank=True)
+    production_year = models.IntegerField("Rok produkcji")
     allowed_package = models.IntegerField(
-        verbose_name="Dopuszczalna ładowność", blank=True)
+        "Dopuszczalna ładowność", blank=True, null=True)
     axle_pressure = models.FloatField(
-        verbose_name="Dopuszczalny nacisk na oś", blank=True)
-    milage = models.IntegerField(verbose_name="Przebieg", blank=True)
+        "Dopuszczalny nacisk na oś", blank=True, null=True)
+    milage = models.IntegerField(
+        "Przebieg", blank=True, null=True)
     is_active = models.BooleanField
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -74,18 +77,18 @@ class Vehicule(models.Model):
         verbose_name_plural = "Pojazdy"
 
     def __str__(self):
-        return "%s" % (self.reg_number)
+        return "%s" % (self.registration_number)
 
 
 class RegistrationCertificate(models.Model):
     vehicule = models.ForeignKey(Vehicule, on_delete=models.CASCADE)
     cert_series = models.CharField(
-        verbose_name="Seria dowodu rejestracyjnego", max_length=2)
+        "Seria dowodu rejestracyjnego", max_length=2)
     cert_number = models.IntegerField(
-        verbose_name="Numer dowodu rejestracyjnego")
-    release_date = models.DateField(verbose_name="Data wydania dowodu")
+        "Numer dowodu rejestracyjnego")
+    release_date = models.DateField("Data wydania dowodu")
     expiry_date = models.DateField(
-        verbose_name="Data ważności dowodu", blank=True)
+        "Data ważności dowodu", blank=True, null=True)
     is_active = models.BooleanField
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -97,8 +100,8 @@ class RegistrationCertificate(models.Model):
 class VehiculeCard(models.Model):
     vehicule = models.ForeignKey(Vehicule, on_delete=models.CASCADE)
     card_series = models.CharField(
-        verbose_name="Seria karty pojazdu", max_length=3)
-    card_number = models.IntegerField(verbose_name="Numer karty pojazdu")
+        "Seria karty pojazdu", max_length=3)
+    card_number = models.IntegerField("Numer karty pojazdu")
     is_active = models.BooleanField
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -110,9 +113,9 @@ class VehiculeCard(models.Model):
 class TechnicalInspection(models.Model):
     vehicule = models.ForeignKey(Vehicule, on_delete=models.CASCADE)
     inspection_date = models.DateField(
-        verbose_name="Data badania technicznego")
+        "Data badania technicznego")
     inspection_expiry = models.DateField(
-        verbose_name="Data ważności badania technicznego")
+        "Data ważności badania technicznego")
     is_active = models.BooleanField
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
