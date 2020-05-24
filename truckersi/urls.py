@@ -7,6 +7,7 @@ urlpatterns = [
     path('', include('react.urls')),
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
+    path('', include('vehicules.urls')),
 ]
 
 if settings.DEBUG:

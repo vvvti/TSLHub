@@ -96,6 +96,10 @@ class RegistrationCertificate(models.Model):
     def __str__(self):
         return str(self.cert_number)
 
+    class Meta:
+        verbose_name = "Dowód rejestracyjny"
+        verbose_name_plural = "Dowody rejestracyjne"
+
 
 class VehiculeCard(models.Model):
     vehicule = models.ForeignKey(Vehicule, on_delete=models.CASCADE)
@@ -108,6 +112,10 @@ class VehiculeCard(models.Model):
 
     def __str__(self):
         return str(self.card_number)
+
+    class Meta:
+        verbose_name = "Karta pojazdu"
+        verbose_name_plural = "Karty pojazdów"
 
 
 class TechnicalInspection(models.Model):
@@ -122,3 +130,7 @@ class TechnicalInspection(models.Model):
 
     def __str__(self):
         return str(self.inspection_date)
+
+    class Meta:
+        verbose_name = "Badanie techniczne"
+        verbose_name_plural = "Badania techniczne"
