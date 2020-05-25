@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getProfiles } from "../../actions/profiles";
+import { getProfiles } from "../../../actions/profiles";
 import "./Profiles.css";
 
 export class Profiles extends Component {

@@ -16,8 +16,10 @@ import { Provider } from "react-redux";
 import store from "../store";
 
 import Vehicules from "./layout/vehicules/Vehicules";
-import AddVehicule from "./layout/vehicules/AddVehicule";
-import Profiles from "./profiles/Profiles";
+//import AddVehicule from "./layout/vehicules/AddVehicule";
+import AddVehiculeModal from "./layout/vehicules/AddVehiculeModal";
+
+import Profiles from "./layout/profiles/Profiles";
 import Register from "./accounts/Register";
 import Login from "./accounts/Login";
 import Dashboard from "./layout/dashboard/Dashboard";
@@ -62,7 +64,7 @@ class App extends Component {
                   <PrivateRoute
                     exact
                     path="/addvehicule"
-                    component={AddVehicule}
+                    component={AddVehiculeModal}
                   />
                   <PrivateRoute exact path="/profile" component={Profiles} />
                   <PrivateRoute
