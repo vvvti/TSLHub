@@ -1,0 +1,36 @@
+.vehicule-modal {
+  box-sizing: border box;
+  background-color: var(--form-primary);
+  padding: 1rem;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+  border-radius: 0.3rem;
+  max-width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal-input {
+  border-color: var(--form-primary);
+  border-radius: 0.3rem;
+  background-color: var(--form-secondary);
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.vehicule-data {
+  margin-top: 1rem;
+}
+
+.vehicule-data form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+.vehicule-data form p {
+  align-self: end;
+  font-size: 1em;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}
