@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import "./Vehicules.css";
 import { Link } from "react-router-dom";
+import VehiculeCard from "./VehiculeCard";
 
 export class Vehicules extends Component {
   constructor(props) {
@@ -111,6 +112,7 @@ export class Vehicules extends Component {
           <this.TableHead />
           <this.TableBody />
         </table>
+        <VehiculeCard />
       </Fragment>
     );
   }
