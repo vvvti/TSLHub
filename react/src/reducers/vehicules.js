@@ -1,4 +1,4 @@
-import { GET_VEHICULES } from "../actions/types";
+import { GET_VEHICULES, ADD_VEHICULE } from "../actions/types";
 
 const initialState = {
   vehicules: []
@@ -11,6 +11,12 @@ export default function(state = initialState, action) {
         ...state,
         vehicules: action.payload
       };
+    case ADD_VEHICULE:
+      return {
+        ...state,
+        vehicules: [...state.vehicules, action.payload]
+      };
+
     default:
       return state;
   }

@@ -8,7 +8,8 @@ import "./VehiculeCard.css";
 
 export class VehiculeCard extends Component {
   static propTypes = {
-    vehicules: PropTypes.array.isRequired
+    vehicules: PropTypes.array.isRequired,
+    getVehicules: PropTypes.func.isRequired
   };
 
   componentDidMount() {

@@ -1,42 +1,221 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
+import PropTypes from "prop-types";
+
+import { addVehicule } from "../../../actions/vehicules";
 
 import "./AddVehiculeModal.css";
 
 export class AddVehiculeModal extends Component {
+  state = {
+    registration_number: "",
+    vehicule_brand: "",
+    vehicule_type: "",
+    vehicule_model: "",
+    vin_number: "",
+    first_registration_date: "",
+    registration_owner_name: "",
+    reg_owner_pesel_regon: "",
+    reg_owner_address: "",
+    owner_name: "",
+    owner_pesel_regon: "",
+    owner_address: "",
+    max_total_weight: "",
+    perm_gross_weight: "",
+    perm_gross_group: "",
+    gross_weight: "",
+    vehicule_category: "",
+    homologation_number: "",
+    axle_count: "",
+    trailer_total_break: "",
+    trailer_total: "",
+    engine_capacity: "",
+    engine_power: "",
+    fuel_kind: "",
+    power_to_weight: "",
+    seat_count: "",
+    places_count: "",
+    vehicule_kind: "",
+    vehicule_purpose: "",
+    production_year: "",
+    axle_pressure: "",
+    milage: ""
+  };
+
+  static propTypes = {
+    addVehicule: PropTypes.func.isRequired
+  };
+
+  onChange = event =>
+    this.setState({ [event.target.name]: event.target.value });
+
+  onSubmit = event => {
+    event.preventDefault();
+    const {
+      registration_number,
+      vehicule_brand,
+      vehicule_type,
+      vehicule_model,
+      vin_number,
+      first_registration_date,
+      registration_owner_name,
+      reg_owner_pesel_regon,
+      reg_owner_address,
+      owner_name,
+      owner_pesel_regon,
+      owner_address,
+      max_total_weight,
+      perm_gross_weight,
+      perm_gross_group,
+      gross_weight,
+      vehicule_category,
+      homologation_number,
+      axle_count,
+      trailer_total_break,
+      trailer_total,
+      engine_capacity,
+      engine_power,
+      fuel_kind,
+      power_to_weight,
+      seat_count,
+      places_count,
+      vehicule_kind,
+      vehicule_purpose,
+      production_year,
+      allowed_package,
+      axle_pressure,
+      milage
+    } = this.state;
+    const vehicule = {
+      registration_number,
+      vehicule_brand,
+      vehicule_type,
+      vehicule_model,
+      vin_number,
+      first_registration_date,
+      registration_owner_name,
+      reg_owner_pesel_regon,
+      reg_owner_address,
+      owner_name,
+      owner_pesel_regon,
+      owner_address,
+      max_total_weight,
+      perm_gross_weight,
+      perm_gross_group,
+      gross_weight,
+      vehicule_category,
+      homologation_number,
+      axle_count,
+      trailer_total_break,
+      trailer_total,
+      engine_capacity,
+      engine_power,
+      fuel_kind,
+      power_to_weight,
+      seat_count,
+      places_count,
+      vehicule_kind,
+      vehicule_purpose,
+      production_year,
+      allowed_package,
+      axle_pressure,
+      milage
+    };
+    this.props.addVehicule(vehicule);
+  };
+
   render() {
+    const {
+      registration_number,
+      vehicule_brand,
+      vehicule_type,
+      vehicule_model,
+      vin_number,
+      first_registration_date,
+      registration_owner_name,
+      reg_owner_pesel_regon,
+      reg_owner_address,
+      owner_name,
+      owner_pesel_regon,
+      owner_address,
+      max_total_weight,
+      perm_gross_weight,
+      perm_gross_group,
+      gross_weight,
+      vehicule_category,
+      homologation_number,
+      axle_count,
+      trailer_total_break,
+      trailer_total,
+      engine_capacity,
+      engine_power,
+      fuel_kind,
+      power_to_weight,
+      seat_count,
+      places_count,
+      vehicule_kind,
+      vehicule_purpose,
+      production_year,
+      allowed_package,
+      axle_pressure,
+      milage
+    } = this.state;
     return (
       <div className="vehicule-modal">
         <div className="modal-header">
           <h3>Wprowadź dane pojazdu</h3>
         </div>
         <div className="vehicule-data">
-          <form>
+          <form onSubmit={this.onSubmit}>
             <p>
               <label>Numer rejestracyjny:</label>
               <input
                 className="modal-input"
                 type="text"
-                name="Numer rejestracyjny"
+                name="registration_number"
+                onChange={this.onChange}
+                value={registration_number}
               />
             </p>
             <p>
               <label>Marka pojazdu:</label>
-              <input className="modal-input" type="text" name="Marka pojazdu" />
+              <input
+                className="modal-input"
+                type="text"
+                name="vehicule_brand"
+                onChange={this.onChange}
+                value={vehicule_brand}
+              />
             </p>
             <p>
               <label>Typ pojazdu:</label>
-              <input className="modal-input" type="text" name="Typ pojazdu" />
+              <input
+                className="modal-input"
+                type="text"
+                name="vehicule_type"
+                onChange={this.onChange}
+                value={vehicule_type}
+              />
             </p>
             <p>
               <label>Model pojazdu:</label>
-              <input className="modal-input" type="text" name="Model pojazdu" />
+              <input
+                className="modal-input"
+                type="text"
+                name="vehicule_model"
+                onChange={this.onChange}
+                value={vehicule_model}
+              />
             </p>
             <p>
               <label>Numer nadwozia:</label>
               <input
                 className="modal-input"
                 type="text"
-                name="Numer nadwozia"
+                name="vin_number"
+                onChange={this.onChange}
+                value={vin_number}
               />
             </p>
             <p>
@@ -44,7 +223,9 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Data 1 rejestracji"
+                name="first_registration_date"
+                onChange={this.onChange}
+                value={first_registration_date}
               />
             </p>
             <p>
@@ -52,7 +233,9 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Nazwa właściciela dowodu rejestracyjnego"
+                name="registration_owner_name"
+                onChange={this.onChange}
+                value={registration_owner_name}
               />
             </p>
             <p>
@@ -60,7 +243,9 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Pesel lub Regon właściciela dowodu"
+                name="reg_owner_pesel_regon"
+                onChange={this.onChange}
+                value={reg_owner_pesel_regon}
               />
             </p>
             <p>
@@ -68,7 +253,9 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Adres właściciela dowodu rejestracyjnego"
+                name="reg_owner_address"
+                onChange={this.onChange}
+                value={reg_owner_address}
               />
             </p>
             <p>
@@ -76,7 +263,9 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Nazwa właściciela pojazdu"
+                name="owner_name"
+                onChange={this.onChange}
+                value={owner_name}
               />
             </p>
             <p>
@@ -84,7 +273,9 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Pesel, Regon właściciela pojazdu"
+                name="owner_pesel_regon"
+                onChange={this.onChange}
+                value={owner_pesel_regon}
               />
             </p>
             <p>
@@ -92,7 +283,9 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Adres właściciela pojazdu"
+                name="owner_address"
+                onChange={this.onChange}
+                value={owner_address}
               />
             </p>
             <p>
@@ -100,7 +293,9 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Maksymalna masa całkowita pojazdu"
+                name="max_total_weight"
+                onChange={this.onChange}
+                value={max_total_weight}
               />
             </p>
             <p>
@@ -108,7 +303,9 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Dopuszczalna masa całkowita pojazdu"
+                name="perm_gross_weight"
+                onChange={this.onChange}
+                value={perm_gross_weight}
               />
             </p>
             <p>
@@ -116,7 +313,9 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Dopuszczalna masa całkowita zespołu pojazdów"
+                name="perm_gross_group"
+                onChange={this.onChange}
+                value={perm_gross_group}
               />
             </p>
             <p>
@@ -124,7 +323,9 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Masa własna pojazdu"
+                name="gross_weight"
+                onChange={this.onChange}
+                value={gross_weight}
               />
             </p>
             <p>
@@ -132,7 +333,9 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Kategoria pojazdu"
+                name="vehicule_category"
+                onChange={this.onChange}
+                value={vehicule_category}
               />
             </p>
             <p>
@@ -140,19 +343,29 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Numer homologacji"
+                name="homologation_number"
+                onChange={this.onChange}
+                value={homologation_number}
               />
             </p>
             <p>
               <label>Liczba osi:</label>
-              <input className="modal-input" type="text" name="Liczba osi" />
+              <input
+                className="modal-input"
+                type="text"
+                name="axle_count"
+                onChange={this.onChange}
+                value={axle_count}
+              />
             </p>
             <p>
               <label>Maksymalna masa całkowita przyczepy z hamulcem:</label>
               <input
                 className="modal-input"
                 type="text"
-                name="Maksymalna masa całkowita przyczepy z hamulcem"
+                name="trailer_total_break"
+                onChange={this.onChange}
+                value={trailer_total_break}
               />
             </p>
             <p>
@@ -160,7 +373,9 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Maksymalna masa całkowita przyczepy bez hamulca"
+                name="trailer_total"
+                onChange={this.onChange}
+                value={trailer_total}
               />
             </p>
             <p>
@@ -168,23 +383,39 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Pojemność silnika"
+                name="engine_capacity"
+                onChange={this.onChange}
+                value={engine_capacity}
               />
             </p>
             <p>
               <label>Moc silnika:</label>
-              <input className="modal-input" type="text" name="Moc silnika" />
+              <input
+                className="modal-input"
+                type="text"
+                name="engine_power"
+                onChange={this.onChange}
+                value={engine_power}
+              />
             </p>
             <p>
               <label>Rodzaj paliwa:</label>
-              <input className="modal-input" type="text" name="Rodzaj paliwa" />
+              <input
+                className="modal-input"
+                type="text"
+                name="fuel_kind"
+                onChange={this.onChange}
+                value={fuel_kind}
+              />
             </p>
             <p>
               <label>Stosunek mocy do masy własnej:</label>
               <input
                 className="modal-input"
                 type="text"
-                name="Stosunek mocy do masy własnej"
+                name="power_to_weight"
+                onChange={this.onChange}
+                value={power_to_weight}
               />
             </p>
             <p>
@@ -192,7 +423,9 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Liczba miejsc siedzących"
+                name="seat_count"
+                onChange={this.onChange}
+                value={seat_count}
               />
             </p>
             <p>
@@ -200,7 +433,9 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Liczba miejsc stojących"
+                name="places_count"
+                onChange={this.onChange}
+                value={places_count}
               />
             </p>
             <p>
@@ -208,7 +443,9 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Rodzaj pojazdu"
+                name="vehicule_kind"
+                onChange={this.onChange}
+                value={vehicule_kind}
               />
             </p>
             <p>
@@ -216,19 +453,29 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Przeznaczenie pojazdu"
+                name="vehicule_purpose"
+                onChange={this.onChange}
+                value={vehicule_purpose}
               />
             </p>
             <p>
               <label>Rok produkcji:</label>
-              <input className="modal-input" type="text" name="Rok produkcji" />
+              <input
+                className="modal-input"
+                type="text"
+                name="production_year"
+                onChange={this.onChange}
+                value={production_year}
+              />
             </p>
             <p>
               <label>Dopuszczalna ładowność:</label>
               <input
                 className="modal-input"
                 type="text"
-                name="Dopuszczalna ładowność"
+                name="allowed_package"
+                onChange={this.onChange}
+                value={allowed_package}
               />
             </p>
             <p>
@@ -236,21 +483,29 @@ export class AddVehiculeModal extends Component {
               <input
                 className="modal-input"
                 type="text"
-                name="Dopuszczalny nacisk na oś"
+                name="axle_pressure"
+                onChange={this.onChange}
+                value={axle_pressure}
               />
             </p>
             <p>
               <label>Przebieg:</label>
-              <input className="modal-input" type="text" name="Przebieg" />
+              <input
+                className="modal-input"
+                type="text"
+                name="milage"
+                onChange={this.onChange}
+                value={milage}
+              />
             </p>
+            <div className="modal-footer">
+              <button type="submit">Zatwierdź</button>
+            </div>
           </form>
-          <div className="modal-footer">
-            <button type="submit">Zatwierdź</button>
-          </div>
         </div>
       </div>
     );
   }
 }
 
-export default AddVehiculeModal;
+export default connect(null, { addVehicule })(AddVehiculeModal);

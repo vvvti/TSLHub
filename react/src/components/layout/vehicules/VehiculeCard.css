@@ -7,7 +7,7 @@
   margin-right: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  /* grid-gap: 20px; */
+  grid-gap: 0.2rem;
   color: var(--text-primary);
   margin-bottom: 0.2rem;
 }
