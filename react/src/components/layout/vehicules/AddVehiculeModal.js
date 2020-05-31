@@ -9,6 +9,8 @@ import "./AddVehiculeModal.css";
 
 export class AddVehiculeModal extends Component {
   state = {
+    owner: 1,
+    user: 1,
     registration_number: "",
     vehicule_brand: "",
     vehicule_type: "",
@@ -53,6 +55,8 @@ export class AddVehiculeModal extends Component {
   onSubmit = event => {
     event.preventDefault();
     const {
+      owner,
+      user,
       registration_number,
       vehicule_brand,
       vehicule_type,
@@ -88,6 +92,8 @@ export class AddVehiculeModal extends Component {
       milage
     } = this.state;
     const vehicule = {
+      owner,
+      user,
       registration_number,
       vehicule_brand,
       vehicule_type,
@@ -127,6 +133,8 @@ export class AddVehiculeModal extends Component {
 
   render() {
     const {
+      owner,
+      user,
       registration_number,
       vehicule_brand,
       vehicule_type,

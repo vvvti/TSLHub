@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development --watch ./react/src/index.js --output ./react/static/frontend/main.js",
-    "build": "webpack --mode production ./react/src/index.js --output ./react/static/frontend/main.js"
+    "build": "webpack --mode production ./react/src/index.js --output ./react/static/frontend/main.js",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "author": "",
   "license": "MIT",
@@ -22,7 +24,13 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "@types/jest": "^25.2.3",
     "axios": "^0.19.2",
+    "babel-jest": "^26.0.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest": "^26.0.1",
+    "jest-enzyme": "^7.1.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-alert": "^7.0.0",
@@ -34,5 +42,17 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "/home/patryk/Projects/Django/truckersi/__mocks__/fileMock.js",
+      "\\.(css|less|scss|sass)$": "/home/patryk/Projects/Django/truckersi/__mocks__/styleMock.js"
+    },
+    "setupFilesAfterEnv": [
+      "/home/patryk/Projects/Django/truckersi/react/src/setupTests.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/home/patryk/Projects/Django/truckersi/node_modules/"
+    ]
   }
 }
