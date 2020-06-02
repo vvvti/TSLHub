@@ -1,10 +1,11 @@
 import axios from "axios";
 
 import { GET_VEHICULES, ADD_VEHICULE } from "./types";
+import { tokenConfig } from "./auth";
 
-export const getVehicules = () => dispatch => {
+export const getVehicules = () => (dispatch, getState) => {
   axios
-    .get("/api/vehicule/")
+    .get("/api/vehicule/", tokenConfig(getState))
     .then(response => {
       dispatch({
         type: GET_VEHICULES,
@@ -14,9 +15,9 @@ export const getVehicules = () => dispatch => {
     .catch(err => console.log(err));
 };
 
-export const addVehicule = vehicule => dispatch => {
+export const addVehicule = vehicule => (dispatch, tokenConfig) => {
   axios
-    .post("/api/vehicule/", vehicule)
+    .post("/api/vehicule/", vehicule, tokenConfig(getState))
     .then(response => {
       dispatch({
         type: ADD_VEHICULE,

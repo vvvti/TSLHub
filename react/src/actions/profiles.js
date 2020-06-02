@@ -7,7 +7,7 @@ import { tokenConfig } from "./auth";
 //get profiles
 export const getProfiles = () => (dispatch, getState) => {
   axios
-    .get("/api/profile", tokenConfig(getState))
+    .get("/api/profile/", tokenConfig(getState))
     .then(res => {
       dispatch({
         type: GET_PROFILES,

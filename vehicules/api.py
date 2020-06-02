@@ -6,18 +6,16 @@ from . models import Vehicule, RegistrationCertificate, VehiculeCard, TechnicalI
 
 class VehiculeViewSet(viewsets.ModelViewSet):
     permission_classes = [
-        permissions.AllowAny
+        permissions.IsAuthenticated
     ]
 
     serializer_class = VehiculeSerializer
 
-    queryset = Vehicule.objects.all()
+    def get_queryset(self):
+        return self.request.vehicule.all()
 
-    # def get_queryset(self):
-    #     return self.request.user.vehicule.all()
-
-    # def perform_create(self, serializer):
-    #     serializer.save(user=self.request.user)
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
 
 
 class RegistrationCertificateViewSet(viewsets.ModelViewSet):
