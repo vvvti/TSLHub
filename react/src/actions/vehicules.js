@@ -5,7 +5,7 @@ import { tokenConfig } from "./auth";
 
 export const getVehicules = () => (dispatch, getState) => {
   axios
-    .get("/api/vehicule/", tokenConfig(getState))
+    .get("/api/vehicule", tokenConfig(getState))
     .then(response => {
       dispatch({
         type: GET_VEHICULES,

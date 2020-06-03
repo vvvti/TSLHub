@@ -4,9 +4,8 @@ from django.contrib.auth.models import User
 
 class Vehicule(models.Model):
 
-    owner = models.ForeignKey("main.CompanyProfile", on_delete=models.CASCADE)
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE)
+        User, related_name="vehicule", on_delete=models.CASCADE)
     registration_number = models.CharField(
         "Number rejestracyjny", max_length=8)
     vehicule_brand = models.CharField("Marka pojazdu", max_length=150)
