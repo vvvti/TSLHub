@@ -1,11 +1,11 @@
 import axios from "axios";
 
 import { GET_VEHICULES, ADD_VEHICULE } from "./types";
-import { tokenConfig } from "./auth";
+import { tokenConfig, getUserId } from "./auth";
 
 export const getVehicules = () => (dispatch, getState) => {
   axios
-    .get("/api/vehicule", tokenConfig(getState))
+    .get("/api/vehicule/", tokenConfig(getState))
     .then(response => {
       dispatch({
         type: GET_VEHICULES,

@@ -5,11 +5,13 @@ import PropTypes from "prop-types";
 
 import { addVehicule } from "../../../actions/vehicules";
 
+import { getUserId } from "../../../actions/auth";
+
 import "./AddVehiculeModal.css";
 
 export class AddVehiculeModal extends Component {
   state = {
-    user: "",
+    user: `${this.props.userid}`,
     registration_number: "",
     vehicule_brand: "",
     vehicule_type: "",
@@ -45,7 +47,8 @@ export class AddVehiculeModal extends Component {
   };
 
   static propTypes = {
-    addVehicule: PropTypes.func.isRequired
+    addVehicule: PropTypes.func.isRequired,
+    userid: PropTypes.number.isRequired
   };
 
   onChange = event =>
@@ -550,7 +553,7 @@ export class AddVehiculeModal extends Component {
 }
 
 const mapStateToProps = state => ({
-  user: state.auth.user.id
+  userid: state.auth.user.id
 });
 
 export default connect(mapStateToProps, { addVehicule })(AddVehiculeModal);

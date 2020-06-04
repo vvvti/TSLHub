@@ -123,3 +123,8 @@ export const tokenConfig = getState => {
   }
   return config;
 };
+
+export const getUserId = getState => {
+  const userId = getState().auth.user.id;
+  return userId;
+};
