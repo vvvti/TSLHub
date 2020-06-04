@@ -9,8 +9,7 @@ import "./AddVehiculeModal.css";
 
 export class AddVehiculeModal extends Component {
   state = {
-    owner: 1,
-    user: 1,
+    user: "",
     registration_number: "",
     vehicule_brand: "",
     vehicule_type: "",
@@ -55,7 +54,6 @@ export class AddVehiculeModal extends Component {
   onSubmit = event => {
     event.preventDefault();
     const {
-      owner,
       user,
       registration_number,
       vehicule_brand,
@@ -92,7 +90,6 @@ export class AddVehiculeModal extends Component {
       milage
     } = this.state;
     const vehicule = {
-      owner,
       user,
       registration_number,
       vehicule_brand,
@@ -129,11 +126,47 @@ export class AddVehiculeModal extends Component {
       milage
     };
     this.props.addVehicule(vehicule);
+
+    this.setState({
+      user,
+      registration_number,
+      vehicule_brand,
+      vehicule_type,
+      vehicule_model,
+      vin_number,
+      first_registration_date,
+      registration_owner_name,
+      reg_owner_pesel_regon,
+      reg_owner_address,
+      owner_name,
+      owner_pesel_regon,
+      owner_address,
+      max_total_weight,
+      perm_gross_weight,
+      perm_gross_group,
+      gross_weight,
+      vehicule_category,
+      homologation_number,
+      axle_count,
+      trailer_total_break,
+      trailer_total,
+      engine_capacity,
+      engine_power,
+      fuel_kind,
+      power_to_weight,
+      seat_count,
+      places_count,
+      vehicule_kind,
+      vehicule_purpose,
+      production_year,
+      allowed_package,
+      axle_pressure,
+      milage
+    });
   };
 
   render() {
     const {
-      owner,
       user,
       registration_number,
       vehicule_brand,
@@ -516,4 +549,8 @@ export class AddVehiculeModal extends Component {
   }
 }
 
-export default connect(null, { addVehicule })(AddVehiculeModal);
+const mapStateToProps = state => ({
+  user: state.auth.user.id
+});
+
+export default connect(mapStateToProps, { addVehicule })(AddVehiculeModal);

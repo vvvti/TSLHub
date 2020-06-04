@@ -15,7 +15,7 @@ export const getVehicules = () => (dispatch, getState) => {
     .catch(err => console.log(err));
 };
 
-export const addVehicule = vehicule => (dispatch, tokenConfig) => {
+export const addVehicule = vehicule => (dispatch, getState) => {
   axios
     .post("/api/vehicule/", vehicule, tokenConfig(getState))
     .then(response => {
