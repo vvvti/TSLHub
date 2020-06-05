@@ -5,8 +5,6 @@ import PropTypes from "prop-types";
 
 import { addVehicule } from "../../../actions/vehicules";
 
-import { getUserId } from "../../../actions/auth";
-
 import "./AddVehiculeModal.css";
 
 export class AddVehiculeModal extends Component {
