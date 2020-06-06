@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+import { connect } from "react-redux";
+import { addInsurance } from "../../../actions/insurances";
+
 export class AddInsuranceModal extends Component {
   state = {
     user: `${this.props.userid}`,
@@ -16,7 +19,7 @@ export class AddInsuranceModal extends Component {
   };
 
   static propTypes = {
-    addVehicule: PropTypes.func.isRequired,
+    addInsurance: PropTypes.func.isRequired,
     userid: PropTypes.number.isRequired
   };
 
@@ -49,7 +52,7 @@ export class AddInsuranceModal extends Component {
       insurance_owner,
       vehicule_owner
     };
-    this.props.addVehicule(vehicule);
+    this.props.addInsurance(insurance);
 
     this.setState({
       user,
@@ -188,4 +191,4 @@ export class AddInsuranceModal extends Component {
 const mapStateToProps = state => ({
   userid: state.auth.user.id
 });
-export default AddInsuranceModal;
+export default connect(mapStateToProps, { addInsurance })(AddInsuranceModal);

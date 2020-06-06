@@ -15,3 +15,6 @@ export const REGISTER_FAIL = "REGISTER_FAIL";
 
 export const GET_VEHICULES = "GET_VEHICULES";
 export const ADD_VEHICULE = "ADD_VEHICULE";
+
+export const GET_INSURANCES = "GET_INSURANCES";
+export const ADD_INSURANCE = "ADD_INSURANCE";

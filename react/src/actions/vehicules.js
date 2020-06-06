@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import { GET_VEHICULES, ADD_VEHICULE } from "./types";
-import { tokenConfig, getUserId } from "./auth";
+import { tokenConfig } from "./auth";
 
 export const getVehicules = () => (dispatch, getState) => {
   axios
