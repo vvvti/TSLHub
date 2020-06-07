@@ -40,7 +40,7 @@ export class AddInsuranceModal extends Component {
       insurance_owner,
       vehicule_owner
     } = this.state;
-    const vehicule = {
+    const insurance = {
       user,
       number,
       insurance_type,

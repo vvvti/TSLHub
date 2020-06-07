@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'react',
     'rest_framework',
     'knox',
+    'vehicules',
 ]
 
 REST_FRAMEWORK = {
