@@ -63,6 +63,7 @@ export class Register extends Component {
               onChange={this.onChange}
               value={username}
               name="username"
+              validate={[required, minLength3, maxLength15]}
             />
             <input
               className="form-registration-input"
@@ -71,6 +72,7 @@ export class Register extends Component {
               onChange={this.onChange}
               value={email}
               name="email"
+              validate={required}
             />
             <input
               className="form-registration-input"
@@ -79,6 +81,7 @@ export class Register extends Component {
               onChange={this.onChange}
               value={password}
               name="password"
+              validate={required}
             />
             <input
               className="form-registration-input"
@@ -87,6 +90,7 @@ export class Register extends Component {
               onChange={this.onChange}
               value={password2}
               name="password2"
+              validate={[required, passwordsMatch]}
             />
             <input
               className="form-registration-submit-button"
@@ -112,6 +116,25 @@ export class Register extends Component {
     );
   }
 }
+
+const required = value => (value ? undefined : "Required");
+
+const minLength = min => value =>
+  value && value.length < min
+    ? `Must be at least ${min} characters`
+    : undefined;
+
+const minLength3 = minLength(3);
+
+const maxLength = max => value =>
+  value && value.length > max
+    ? `Musi zawierać ${max} znaków lub mniej`
+    : undefined;
+
+const maxLength15 = maxLength(15);
+
+const passwordsMatch = (value, allValues) =>
+  value !== allValues.password ? "Hasła się nie zgadzają" : undefined;
 
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated
