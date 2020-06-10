@@ -4,6 +4,9 @@ from django.contrib.auth import authenticate
 from . models import Profile
 
 
+User._meta.get_field('email')._unique = True
+
+
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
