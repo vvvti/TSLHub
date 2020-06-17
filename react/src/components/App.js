@@ -18,6 +18,7 @@ import store from "../store";
 import Vehicules from "./layout/vehicules/Vehicules";
 //import AddVehicule from "./layout/vehicules/AddVehicule";
 import AddVehiculeModal from "./layout/vehicules/AddVehiculeModal";
+import AddInsuranceeModal from "./layout/insurances/AddInsuranceModal";
 
 import Profiles from "./layout/profiles/Profiles";
 import Register from "./accounts/Register";
@@ -71,6 +72,11 @@ class App extends Component {
                     exact
                     path="/insurances"
                     component={Insurances}
+                  />
+                  <PrivateRoute
+                    exact
+                    path="/addinsurance"
+                    component={AddInsuranceeModal}
                   />
                   <PrivateRoute exact path="/schedule" component={Schedule} />
                   <PrivateRoute exact path="/documents" component={Documents} />
