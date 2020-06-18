@@ -16,7 +16,7 @@ export class InsuranceCard extends Component {
   render() {
     return (
       <Fragment>
-        {this.props.insurances.map(vehicule => (
+        {this.props.insurances.map(insurance => (
           <div className="vehicule-card" key={insurance.id}>
             <div className="vehicule-detail">
               <h6>Numer polisy ubezpieczeniowej</h6>

@@ -1,6 +1,7 @@
 import axios from "axios";
 
 import { GET_INSURANCES, ADD_INSURANCE } from "./types";
+
 import { tokenConfig } from "./auth";
 
 export const getInsurances = () => (dispatch, getState) => {
@@ -15,7 +16,7 @@ export const getInsurances = () => (dispatch, getState) => {
     .catch(err => console.log(err));
 };
 
-export const addInsurance = vehicule => (dispatch, getState) => {
+export const addInsurance = insurance => (dispatch, getState) => {
   axios
     .post("/api/insurance/", insurance, tokenConfig(getState))
     .then(response => {
