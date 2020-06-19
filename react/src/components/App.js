@@ -31,6 +31,7 @@ import Schedule from "../components/layout/schedule/Schedule";
 import Documents from "../components/layout/documents/Documents";
 import AdminPanel from "../components/layout/adminpanel/AdminPanel";
 import Drivers from "../components/layout/drivers/Drivers";
+import Footer from "../components/layout/footer/Footer";
 
 import PrivateRoute from "./common/PrivateRoute";
 import { loadUser } from "../actions/auth";
@@ -91,6 +92,7 @@ class App extends Component {
                   <Route exact path="/login" component={Login} />
                 </Switch>
               </main>
+              <Footer />
             </Fragment>
           </Router>
         </AlertProvider>

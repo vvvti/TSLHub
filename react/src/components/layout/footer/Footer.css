@@ -1,0 +1,7 @@
+.main-footer {
+  background-color: var(--bg-primary);
+  height: 5rem;
+  width: 100%;
+  position: fixed bottom;
+  z-index: 300;
+}
