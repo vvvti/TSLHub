@@ -1,7 +1,8 @@
-.main-footer {
-  background-color: var(--bg-primary);
-  height: 5rem;
+.footer {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  position: fixed bottom;
+  height: 4rem;
+  background-color: var(--bg-primary);
   z-index: 300;
 }

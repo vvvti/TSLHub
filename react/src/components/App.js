@@ -56,43 +56,54 @@ class App extends Component {
             <Fragment>
               <Alerts />
               <Navbar />
-              <div className="header-container">
-                <Header />
-              </div>
-              <main>
-                <Switch>
-                  <PrivateRoute exact path="/" component={Dashboard} />
-                  <PrivateRoute exact path="/vehicules" component={Vehicules} />
-                  <PrivateRoute
-                    exact
-                    path="/addvehicule"
-                    component={AddVehiculeModal}
-                  />
-                  <PrivateRoute exact path="/profile" component={Profiles} />
-                  <PrivateRoute
-                    exact
-                    path="/insurances"
-                    component={Insurances}
-                  />
-                  <PrivateRoute
-                    exact
-                    path="/addinsurance"
-                    component={AddInsuranceeModal}
-                  />
-                  <PrivateRoute exact path="/schedule" component={Schedule} />
-                  <PrivateRoute exact path="/documents" component={Documents} />
-                  <PrivateRoute
-                    exact
-                    path="/adminpanel"
-                    component={AdminPanel}
-                  />
-                  <PrivateRoute exact path="/drivers" component={Drivers} />
+              <div className="main-container">
+                <div className="header-container">
+                  <Header />
+                </div>
+                <main>
+                  <Switch>
+                    <PrivateRoute exact path="/" component={Dashboard} />
+                    <PrivateRoute
+                      exact
+                      path="/vehicules"
+                      component={Vehicules}
+                    />
+                    <PrivateRoute
+                      exact
+                      path="/addvehicule"
+                      component={AddVehiculeModal}
+                    />
+                    <PrivateRoute exact path="/profile" component={Profiles} />
+                    <PrivateRoute
+                      exact
+                      path="/insurances"
+                      component={Insurances}
+                    />
+                    <PrivateRoute
+                      exact
+                      path="/addinsurance"
+                      component={AddInsuranceeModal}
+                    />
+                    <PrivateRoute exact path="/schedule" component={Schedule} />
+                    <PrivateRoute
+                      exact
+                      path="/documents"
+                      component={Documents}
+                    />
+                    <PrivateRoute
+                      exact
+                      path="/adminpanel"
+                      component={AdminPanel}
+                    />
+                    <PrivateRoute exact path="/drivers" component={Drivers} />
 
-                  <Route exact path="/register" component={Register} />
-                  <Route exact path="/login" component={Login} />
-                </Switch>
-              </main>
-              <Footer />
+                    <Route exact path="/register" component={Register} />
+                    <Route exact path="/login" component={Login} />
+                  </Switch>
+                </main>
+
+                <Footer />
+              </div>
             </Fragment>
           </Router>
         </AlertProvider>

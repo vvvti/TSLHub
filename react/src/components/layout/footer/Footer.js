@@ -4,7 +4,7 @@ import "./Footer.css";
 export const footer = () => {
   return (
     <div className="main-footer">
-      <div className="footer-container"></div>
+      <footer className="footer">TSLHub</footer>
     </div>
   );
 };
