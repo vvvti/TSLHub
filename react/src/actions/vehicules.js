@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { GET_VEHICULES, ADD_VEHICULE } from "./types";
+import { GET_VEHICULES, ADD_VEHICULE, DELETE_VEHICULE } from "./types";
 import { tokenConfig } from "./auth";
 
 export const getVehicules = () => (dispatch, getState) => {
@@ -22,6 +22,19 @@ export const addVehicule = vehicule => (dispatch, getState) => {
       dispatch({
         type: ADD_VEHICULE,
         payload: response.data
+      });
+    })
+    .catch(err => console.log(err));
+};
+
+export const deleteVehicule = id => (dispatch, getState) => {
+  axios
+    .delete(`/api/vehicule/${id}/`, tokenConfig(getState))
+    .then(res => {
+      dispatch(createMessage({ deleteVehicule: "Vehicule Deleted" }));
+      dispatch({
+        type: DELETE_VEHICULE,
+        payload: id
       });
     })
     .catch(err => console.log(err));

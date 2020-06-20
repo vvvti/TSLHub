@@ -1,4 +1,4 @@
-import { GET_VEHICULES, ADD_VEHICULE } from "../actions/types";
+import { GET_VEHICULES, ADD_VEHICULE, DELETE_VEHICULE } from "../actions/types";
 
 const initialState = {
   vehicules: []
@@ -15,6 +15,13 @@ export default function(state = initialState, action) {
       return {
         ...state,
         vehicules: [...state.vehicules, action.payload]
+      };
+    case DELETE_VEHICULE:
+      return {
+        ...state,
+        vehicules: state.vehicules.filter(
+          vehicule => vehicule.id !== action.payload
+        )
       };
 
     default:

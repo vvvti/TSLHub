@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { GET_INSURANCES, ADD_INSURANCE } from "./types";
+import { GET_INSURANCES, ADD_INSURANCE, DELETE_INSURANCE } from "./types";
 
 import { tokenConfig } from "./auth";
 
@@ -23,6 +23,19 @@ export const addInsurance = insurance => (dispatch, getState) => {
       dispatch({
         type: ADD_INSURANCE,
         payload: response.data
+      });
+    })
+    .catch(err => console.log(err));
+};
+
+export const deleteInsurance = id => (dispatch, getState) => {
+  axios
+    .delete(`/api/insurance/${id}/`, tokenConfig(getState))
+    .then(res => {
+      dispatch(createMessage({ deleteInsurance: "Insurance Deleted" }));
+      dispatch({
+        type: DELETE_INSURANCE,
+        payload: id
       });
     })
     .catch(err => console.log(err));
