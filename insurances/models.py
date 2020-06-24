@@ -35,4 +35,4 @@ class PaymentRate(models.Model):
         "Kwota do zapłaty", decimal_places=2, max_digits=9)
 
     def __str__(self):
-        return (self.rate_date)
+        return str(self.rate_date)

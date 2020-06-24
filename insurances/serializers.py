@@ -8,6 +8,7 @@ class InsuranceSerializer(serializers.ModelSerializer):
         fields = (
             '__all__'
         )
+       
 
 
 class PaymentRateSerializer(serializers.ModelSerializer):
@@ -16,3 +17,4 @@ class PaymentRateSerializer(serializers.ModelSerializer):
         fields = (
             '__all__'
         )
+        depth = 1
