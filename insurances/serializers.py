@@ -12,9 +12,10 @@ class InsuranceSerializer(serializers.ModelSerializer):
 
 
 class PaymentRateSerializer(serializers.ModelSerializer):
+    policy = InsuranceSerializer(required=False, read_only=True)
     class Meta:
         model = PaymentRate
         fields = (
             '__all__'
         )
-        depth = 1
+        
