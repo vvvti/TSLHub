@@ -5,6 +5,8 @@
 }
 .Container {
   margin: 0 0;
+  align-items: center;
+  display: flex;
 }
 
 main {
