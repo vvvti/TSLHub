@@ -24,14 +24,14 @@ import Profiles from "./layout/profiles/Profiles";
 import Register from "./accounts/Register";
 import Login from "./accounts/Login";
 import Dashboard from "./layout/dashboard/Dashboard";
-import Header from "../components/layout/Header";
-import Navbar from "../components/layout/navbar/Navbar";
-import Insurances from "../components/layout/insurances/Insurances";
-import Schedule from "../components/layout/schedule/Schedule";
-import Documents from "../components/layout/documents/Documents";
-import AdminPanel from "../components/layout/adminpanel/AdminPanel";
-import Drivers from "../components/layout/drivers/Drivers";
-import Footer from "../components/layout/footer/Footer";
+import Header from "./layout/Header";
+import Navbar from "./layout/navbar/Navbar";
+import Insurances from "./layout/insurances/Insurances";
+import Schedule from "./layout/schedule/Schedule";
+import Documents from "./layout/documents/Documents";
+import AdminPanel from "./layout/adminpanel/AdminPanel";
+import Drivers from "./layout/drivers/Drivers";
+import Footer from "./layout/footer/Footer";
 
 import PrivateRoute from "./common/PrivateRoute";
 import { loadUser } from "../actions/auth";
@@ -112,4 +112,5 @@ class App extends Component {
   }
 }
 
+export default App;
 ReactDOM.render(<App />, document.getElementById("app"));

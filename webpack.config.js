@@ -1,12 +1,12 @@
 module.exports = {
+  devtool: 'inline-source-map',
+  entry: './src/index.tsx',
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.tsx?$/,
+        use: 'awesome-typescript-loader',
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
       },
       {
         test: /\.css$/,
@@ -35,6 +35,7 @@ module.exports = {
           }
         ]
       },
+      
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
@@ -44,5 +45,9 @@ module.exports = {
         ]
       }
     ]
-  }
+    
+
+  },
+  resolve: {extensions: [".js", ".jsx", ".json", ".ts", ".tsx"]
+  ,}
 };
