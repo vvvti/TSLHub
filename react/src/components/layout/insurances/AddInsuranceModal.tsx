@@ -3,8 +3,12 @@ import PropTypes from "prop-types";
 
 import { connect } from "react-redux";
 import { addInsurance } from "../../../actions/insurances";
+import { IAddInsurance } from "../../../interfaces/insurances";
 
-export class AddInsuranceModal extends Component {
+
+
+
+export class AddInsuranceModal extends Component<IAddInsurance> {
   state = {
     user: `${this.props.userid}`,
     number: "",
@@ -18,10 +22,10 @@ export class AddInsuranceModal extends Component {
     vehicule_owner: ""
   };
 
-  static propTypes = {
-    addInsurance: PropTypes.func.isRequired,
-    userid: PropTypes.number.isRequired
-  };
+  // static propTypes = {
+  //   addInsurance: PropTypes.func.isRequired,
+  //   userid: PropTypes.number.isRequired
+  // };
 
   onChange = event =>
     this.setState({ [event.target.name]: event.target.value });

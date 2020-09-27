@@ -4,13 +4,18 @@ import PropTypes from "prop-types";
 
 import { getVehicules } from "../../../actions/vehicules";
 
+import { IGetVehicules } from "../../../interfaces/vehicules"
+
 import "./VehiculeCard.css";
 
-export class VehiculeCard extends Component {
-  static propTypes = {
-    vehicules: PropTypes.array.isRequired,
-    getVehicules: PropTypes.func.isRequired
-  };
+
+
+
+export class VehiculeCard extends Component<IGetVehicules> {
+  // static propTypes = {
+  //   vehicules: PropTypes.array.isRequired,
+  //   getVehicules: PropTypes.func.isRequired
+  // };
 
   componentDidMount() {
     this.props.getVehicules();
