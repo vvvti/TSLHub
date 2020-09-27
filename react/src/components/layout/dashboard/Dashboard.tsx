@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 import "./Dashboard.css";
 
-import Profiles from "../../layout/profiles/Profiles";
-import Navbar from "../../layout/navbar/Navbar";
-import Header from "../../layout/Header";
+import Profiles from "../profiles/Profiles";
+import Navbar from "../navbar/Navbar";
+import Header from "../Header";
 
 export class Dashboard extends Component {
   render() {

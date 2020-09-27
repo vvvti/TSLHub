@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 import { addVehicule } from "../../../actions/vehicules";
+import { IAddVehicule } from "../../../interfaces/vehicules";
 
 import "./AddVehiculeModal.css";
 
-export class AddVehiculeModal extends Component {
+export class AddVehiculeModal extends Component<IAddVehicule> {
   state = {
     user: `${this.props.userid}`,
     registration_number: "",
@@ -40,14 +41,15 @@ export class AddVehiculeModal extends Component {
     vehicule_kind: "",
     vehicule_purpose: "",
     production_year: "",
+    allowed_package: "",
     axle_pressure: "",
     milage: ""
   };
 
-  static propTypes = {
-    addVehicule: PropTypes.func.isRequired,
-    userid: PropTypes.number.isRequired
-  };
+  // static propTypes = {
+  //   addVehicule: PropTypes.func.isRequired,
+  //   userid: PropTypes.number.isRequired
+  // };
 
   onChange = event =>
     this.setState({ [event.target.name]: event.target.value });
