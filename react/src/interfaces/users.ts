@@ -1,5 +1,6 @@
 export interface IUser {
     userid: number;
+    isAuthenticated: boolean;
 }
 
 export interface IUserProfile {
@@ -16,3 +17,4 @@ export interface IGetProfile {
     getProfiles: () => void;
     profiles: [IUserProfile]; 
 }
+
