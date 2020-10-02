@@ -4,3 +4,8 @@ export interface IAuth {
     logout: boolean;
     isAuthenticated: boolean;
 }
+
+export interface IRegister extends IAuth {
+    createMessage: (passwordsNotMatch: {}) => void;
+    register: (newUser: { username: string, password: string, email: string}) => void;
+}
