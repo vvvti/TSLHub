@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
 
 import "./Header.css";
 
 import { IAuth } from "../../interfaces/auth"
 
-export class Header extends Component {
+export class Header extends Component<IAuth> {
   // static propTypes = {
   //   auth: PropTypes.object.isRequired,
   //   logout: PropTypes.func.isRequired

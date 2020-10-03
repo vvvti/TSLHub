@@ -1,14 +1,16 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 import { getInsurances } from "../../../actions/insurances";
 
-export class InsuranceCard extends Component {
-  static propTypes = {
-    insurances: PropTypes.array.isRequired,
-    getInsurances: PropTypes.func.isRequired
-  };
+import { IGetInsurances } from "../../../interfaces/insurances"
+
+export class InsuranceCard extends Component<IGetInsurances> {
+  // static propTypes = {
+  //   insurances: PropTypes.array.isRequired,
+  //   getInsurances: PropTypes.func.isRequired
+  // };
 
   componentDidMount() {
     this.props.getInsurances();

@@ -16,7 +16,7 @@ export interface IInsurances {
 }
 
 export interface IGetInsurances {
-    getVehicules: () => void;
+    getInsurances: () => void;
     insurances: [IInsurances];
 }
 
