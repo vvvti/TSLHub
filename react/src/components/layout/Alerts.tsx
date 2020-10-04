@@ -1,17 +1,18 @@
 import React, { Component, Fragment } from "react";
 import { withAlert } from "react-alert";
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
+// 
+import { IAlerts } from "../../interfaces/alerts"
 
-export class Alerts extends Component {
+export class Alerts extends Component<IAlerts> {
   componentDidMount() {
     this.props.alert.show("it works");
   }
 
-  static propTypes = {
-    error: PropTypes.object.isRequired,
-    message: PropTypes.object.isRequired
-  };
+  // static propTypes = {
+  //   error: PropTypes.object.isRequired,
+  //   message: PropTypes.object.isRequired
+  // };
 
   componentDidUpdate(prevProps) {
     const { error, alert, message } = this.props;
