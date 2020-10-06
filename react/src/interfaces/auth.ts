@@ -8,4 +8,5 @@ export interface IAuth {
 export interface IRegister extends IAuth {
     createMessage: (passwordsNotMatch: {}) => void;
     register: (newUser: { username: string, password: string, email: string}) => void;
+    validate: HTMLInputElement;
 }

@@ -1,6 +1,8 @@
 export interface IAlerts {
-    alert: {}
+    alert: {
+        show: (alert: string) => void;
+    }
     error: {}
     message: {}
-    show: () => void;
+    
 }
