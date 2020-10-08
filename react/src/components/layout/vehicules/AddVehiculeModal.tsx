@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-// import PropTypes from "prop-types";
-
 import { addVehicule } from "../../../actions/vehicules";
 import { IAddVehicule } from "../../../interfaces/vehicules";
 
@@ -45,11 +43,6 @@ export class AddVehiculeModal extends Component<IAddVehicule> {
     axle_pressure: "",
     milage: ""
   };
-
-  // static propTypes = {
-  //   addVehicule: PropTypes.func.isRequired,
-  //   userid: PropTypes.number.isRequired
-  // };
 
   onChange = event =>
     this.setState({ [event.target.name]: event.target.value });

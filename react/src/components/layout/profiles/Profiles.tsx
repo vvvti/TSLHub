@@ -1,15 +1,11 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
 import { getProfiles } from "../../../actions/profiles";
 import "./Profiles.css";
 import { IGetProfile } from "../../../interfaces/users"
 
 export class Profiles extends Component<IGetProfile> {
-  // static propTypes = {
-  //   profiles: PropTypes.array.isRequired,
-  //   getProfiles: PropTypes.func.isRequired
-  // };
+
   componentDidMount() {
     this.props.getProfiles();
   }
