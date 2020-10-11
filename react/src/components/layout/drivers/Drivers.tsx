@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
-export class Drivers extends Component {
-  render() {
+const Drivers: React.FC = () => {
     return (
       <div>
         <h1>Drivers</h1>

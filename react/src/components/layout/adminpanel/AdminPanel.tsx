@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 
-export class AdminPanel extends Component {
-  render() {
+const AdminPanel: React.FC = () => {
     return (
       <div>
         <h1>Admin panel</h1>

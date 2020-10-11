@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
-export class Documents extends Component {
-  render() {
+const Documents: React.FC = () => {
     return (
       <div>
         <h1>Documents</h1>

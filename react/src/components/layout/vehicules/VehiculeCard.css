@@ -10,6 +10,7 @@
   grid-gap: 0.2rem;
   color: var(--text-primary);
   margin-bottom: 0.2rem;
+  text-decoration: none;
 }
 
 .vehicule-details {

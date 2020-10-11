@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 
 import InsuranceCard from "./InsuranceCard";
 
-export class Insurances extends Component {
-  render() {
+const Insurances: React.FC = () => {
     return (
       <Fragment>
         <Link
