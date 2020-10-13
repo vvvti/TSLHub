@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'knox',
     'vehicules',
+    'drivers',
 ]
 
 REST_FRAMEWORK = {
