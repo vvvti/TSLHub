@@ -24,3 +24,14 @@ class DrivingLicense(models.Model):
 
     def __str__(self):
         return (self.license_number)
+
+class DriverIDCard(models.Model):
+
+    driver = models.ForeignKey(Driver, on_delete=models.CASCADE)
+    id_number = models.IntegerField("Numer dowodu tożsamości")
+    id_series = models.CharField("Seria dowodu tożsamości")
+    issue_date = models.DateField("Data wydania")
+    expiry_date = models.DateField("Data waznosci")
+
+    def __str__(self):
+        return (self.id_number)
