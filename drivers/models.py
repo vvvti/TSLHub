@@ -18,7 +18,7 @@ class DrivingLicense(models.Model):
     
     driver = models.ForeignKey(Driver, on_delete=models.CASCADE)
     license_number = models.IntegerField("Numer prawa jazdy")
-    license_series = models.CharField("Seria prawa jazdy")
+    license_series = models.CharField("Seria prawa jazdy", max_length=12)
     issue_date = models.DateField("Data wydania")
     expiry_date = models.DateField("Data ważności")
 
@@ -29,7 +29,7 @@ class DriverIDCard(models.Model):
 
     driver = models.ForeignKey(Driver, on_delete=models.CASCADE)
     id_number = models.IntegerField("Numer dowodu tożsamości")
-    id_series = models.CharField("Seria dowodu tożsamości")
+    id_series = models.CharField("Seria dowodu tożsamości", max_length=12)
     issue_date = models.DateField("Data wydania")
     expiry_date = models.DateField("Data waznosci")
 
