@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-const Drivers: React.FC = () => {
+export const Drivers: React.FC = () => {
     return (
       <div>
         <h1>Drivers</h1>
@@ -13,5 +13,3 @@ const Drivers: React.FC = () => {
     );
   }
 }
-
-export default Drivers;

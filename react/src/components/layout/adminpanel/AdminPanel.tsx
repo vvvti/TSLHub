@@ -1,6 +1,6 @@
 import React from "react";
 
-const AdminPanel: React.FC = () => {
+export const AdminPanel: React.FC = () => {
     return (
       <div>
         <h1>Admin panel</h1>
@@ -8,5 +8,3 @@ const AdminPanel: React.FC = () => {
     );
   }
 }
-
-export default AdminPanel;

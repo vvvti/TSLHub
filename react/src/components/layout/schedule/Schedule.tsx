@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 
-export class Schedule extends Component {
-  render() {
+export const Schedule: React.FC = () => {
+  
     return (
       <div>
         <h1>Schedule</h1>
       </div>
     );
   }
-}
-
-export default Schedule;

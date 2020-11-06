@@ -27,10 +27,10 @@ import Dashboard from "./layout/dashboard/Dashboard";
 import Header from "./layout/Header";
 import Navbar from "./layout/navbar/Navbar";
 import Insurances from "./layout/insurances/Insurances";
-import Schedule from "./layout/schedule/Schedule";
+import {Schedule} from "./layout/schedule/Schedule";
 import Documents from "./layout/documents/Documents";
-import AdminPanel from "./layout/adminpanel/AdminPanel";
-import Drivers from "./layout/drivers/Drivers";
+import {AdminPanel} from "./layout/adminpanel/AdminPanel";
+import {Drivers} from "./layout/drivers/Drivers";
 import Footer from "./layout/footer/Footer";
 
 import PrivateRoute from "./common/PrivateRoute";
